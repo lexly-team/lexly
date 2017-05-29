@@ -23,11 +23,11 @@ def handle_command(user, command, sub_command, channel):
         are valid commands. If so, then acts on the commands. If not,
         returns back what it needs for clarification.
     """
-    print("user=" + user + ", command=" + command + ", sub_command=" + sub_command + ", channel=" + channel)
+    print("\nuser=" + user + ", command=" + command + ", sub_command=" + sub_command + ", channel=" + channel + "\n")
     response = "Not sure what you mean. Use the *" + EXAMPLE_COMMAND + \
                "* command with numbers, delimited by spaces."
     if command.startswith(EXAMPLE_COMMAND):
-        if "hi" in command:
+        if command.split(" ")[1] == "hi":
             response = "Oh, hi! How are you, " + user + " today?"
         else:
             response = "Sure...write some more code then I can do that!"
